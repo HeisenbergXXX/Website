@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tomato Drones</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background:#0b0b0b;
+  color:white;
+}
+
+.container {
+  max-width:1200px;
+  margin:auto;
+  padding:80px 20px;
+}
+
+h1 { font-size:64px; line-height:1.1; }
+h2 { font-size:32px; margin-bottom:20px; }
+p { color:#aaa; }
+
+.btn {
+  padding:14px 28px;
+  border-radius:8px;
+  text-decoration:none;
+  display:inline-block;
+  margin:10px;
+  transition:0.3s;
+}
+
+.btn-primary {
+  background:#ff3c3c;
+  color:white;
+}
+
+.btn-outline {
+  border:1px solid #555;
+  color:white;
+}
+
+.btn:hover { transform:translateY(-2px); }
+
+.hero {
+  position:relative;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+}
+
+.hero video {
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-1;
+  opacity:0.4;
+}
+
+.glass {
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  padding:40px;
+  border-radius:16px;
+}
+
+.services {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card {
+  padding:30px;
+  background:#111;
+  border-radius:12px;
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:translateY(-5px);
+  background:#151515;
+}
+
+.portfolio {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:20px;
+}
+
+.portfolio iframe, .portfolio video {
+  width:100%;
+  height:200px;
+  border-radius:12px;
+  border:none;
+}
+
+.stats {
+  display:flex;
+  justify-content:space-between;
+  text-align:center;
+}
+
+.stats h2 {
+  font-size:40px;
+}
+
+footer {
+  text-align:center;
+  padding:40px;
+  color:#666;
+}
+
+@media(max-width:768px){
+  h1 { font-size:40px; }
+  .stats { flex-direction:column; gap:20px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <video autoplay muted loop>
+    <source src="C:\Users\Bennett_SAIT\Downloads\Ferrari1.mp4" type="video/mp4">
+  </video>
+
+  <div class="glass">
+    <h1>Cinematic FPV Drone</h1>
+    <p>Calgary | Real Estate | Industrial | Events</p>
+    <a href="#portfolio" class="btn btn-primary">View Work</a>
+    <a href="#contact" class="btn btn-outline">Get a Quote</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="container">
+  <h2>Services</h2>
+  <div class="services">
+    <div class="card">Real Estate Flythroughs</div>
+    <div class="card">Construction Tracking</div>
+    <div class="card">Event Coverage</div>
+    <div class="card">Commercial Cinematics</div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="container" id="portfolio">
+  <h2>Featured Work</h2>
+  <div class="portfolio">
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="container">
+  <h2>About</h2>
+  <p>
+    Professional FPV drone pilot delivering high-impact cinematic visuals for
+    real estate, industrial, and commercial clients.
+  </p>
+</section>
+
+<!-- STATS -->
+<section class="container stats">
+  <div>
+    <h2>50+</h2>
+    <p>Projects</p>
+  </div>
+  <div>
+    <h2>5+</h2>
+    <p>Industries</p>
+  </div>
+  <div>
+    <h2>100+</h2>
+    <p>Flight Hours</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="container" id="contact" style="text-align:center;">
+  <h2>Ready to Shoot?</h2>
+  <p>Get a quote within 24 hours</p>
+  <a href="mailto:you@email.com" class="btn btn-primary">Contact Me</a>
+</section>
+
+<footer>
+  © 2026 Tomato Drones
+</footer>
+
+</body>
+</html>

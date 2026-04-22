@@ -47,13 +47,71 @@ p { color:#aaa; }
 .btn:hover { transform:translateY(-2px); }
 
 .hero {
-  position:relative;
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  overflow:hidden;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  opacity: 0.5;
+}
+
+.hero::after {
+  content:"";
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.8)
+  );
+  z-index:-1;
+}
+
+/* NAV STYLE TITLE */
+.brand {
+  position: fixed;
+  top: 30px;
+  left: 40px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  z-index: 10;
+}
+
+/* HERO TEXT */
+.hero-content {
+  position: absolute;
+  bottom: 120px;
+  left: 60px;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 72px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* BUTTON ROW */
+.hero-actions {
+  display: flex;
+  gap: 10px;
 }
 
 .hero video {
@@ -130,17 +188,23 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-  <video autoplay muted loop>
+
+  <video autoplay muted loop playsinline>
     <source src="twoRock.mp4" type="video/mp4">
   </video>
 
-  <div class="glass">
-    <h1>Tomato Drones</h1>
-    <h2>Aerial Cinematography</h2>
-    <p>Calgary, Alberta</p>
-    <a href="#portfolio" class="btn btn-primary">View Work</a>
-    <a href="#contact" class="btn btn-outline">Get a Quote</a>
+  <div class="brand">TOMATO DRONES</div>
+
+  <div class="hero-content">
+    <h1>Cinematic FPV<br>Aerials</h1>
+    <p>Calgary-based drone cinematography for real estate, industrial, and commercial visuals.</p>
+
+    <div class="hero-actions">
+      <a href="#portfolio" class="btn btn-primary">View Work</a>
+      <a href="#contact" class="btn btn-outline">Get a Quote</a>
+    </div>
   </div>
+
 </section>
 
 <!-- SERVICES -->

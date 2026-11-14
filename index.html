@@ -1,264 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tomato Drones</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
-* { margin:0; padding:0; box-sizing:border-box; }
-body {
-  font-family: 'Inter', sans-serif;
-  background:#0b0b0b;
-  color:white;
-}
-
-.container {
-  max-width:1200px;
-  margin:auto;
-  padding:80px 20px;
-}
-
-h1 { font-size:64px; line-height:1.1; }
-h2 { font-size:32px; margin-bottom:20px; }
-p { color:#aaa; }
-
-.btn {
-  padding:14px 28px;
-  border-radius:8px;
-  text-decoration:none;
-  display:inline-block;
-  margin:10px;
-  transition:0.3s;
-}
-
-.btn-primary {
-  background:#ff3c3c;
-  color:white;
-}
-
-.btn-outline {
-  border:1px solid #555;
-  color:white;
-}
-
-.btn:hover { transform:translateY(-2px); }
-
-.hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.hero video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
-  opacity: 1;
-}
-
-.hero::after {
-  content:"";
-  position: fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.6),
-    rgba(0,0,0,0.8)
-  );
-  z-index:-1;
-}
-
-/* NAV STYLE TITLE */
-.brand {
-  position: fixed;
-  top: 30px;
-  right: 40px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  z-index: 10;
-}
-
-/* HERO TEXT */
-.hero-content {
-  position: absolute;
-  bottom: 120px;
-  left: 60px;
-  max-width: 600px;
-}
-
-.hero-content h1 {
-  font-size: 72px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.hero-content p {
-  font-size: 18px;
-  color: #ccc;
-  margin-bottom: 20px;
-}
-
-/* BUTTON ROW */
-.hero-actions {
-  display: flex;
-  gap: 10px;
-}
-
-.glass {
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(10px);
-  padding:40px;
-  border-radius:16px;
-}
-
-.services {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.card {
-  padding:30px;
-  background:#111;
-  border-radius:12px;
-  transition:0.3s;
-}
-
-.card:hover {
-  transform:translateY(-5px);
-  background:#151515;
-}
-
-.portfolio {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:20px;
-}
-
-.portfolio iframe, .portfolio video {
-  width:100%;
-  height:200px;
-  border-radius:12px;
-  border:none;
-}
-
-.stats {
-  display:flex;
-  justify-content:space-between;
-  text-align:center;
-}
-
-.stats h2 {
-  font-size:40px;
-}
-
-footer {
-  text-align:center;
-  padding:40px;
-  color:#666;
-}
-
-@media(max-width:768px){
-  h1 { font-size:40px; }
-  .stats { flex-direction:column; gap:20px; }
-}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tomato Drones| Live and cinematic FPV drone coverage</title>
+<meta name="description" content="Live and cinematic FPV drone coverage for sports and events.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Big+Shoulders+Display:wght@900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<nav>
+  <a class="logo" href="index.html">Tomato<i>Drones</i></a>
+  <ul>
+    <li class="hide"><a href="#work">Work</a></li>
+    <li class="hide"><a href="#reel">Reel</a></li>
+    <li><a href="info.html">Info</a></li>
+    <li><a class="btn" href="#book">Book</a></li>
+  </ul>
+</nav>
 
-<!-- HERO -->
-<section class="hero">
+<header class="hero slot">
+  <video autoplay muted loop playsinline poster="media/hero.jpg"><source src="media/hero.mp4" type="video/mp4"></video>
+  <p class="cap">HERO VIDEO: media/hero.mp4 (10 to 15 s, muted loop). Your best FPV chase shot, first person, fast, close to the action. Add media/hero.jpg as the poster frame.</p>
+  <div class="hud">
+    <span class="rec">LIVE <span id="t">00:00</span></span>
+    <span>BAT <span id="v">25.2</span>V<span class="bat"><i></i></span></span>
+  </div>
+  <div class="hz"></div>
+  <div class="spd"><span id="s">158</span> <small>km/h</small></div>
+  <div class="wrap in">
+    <h1>Inside<br>the action.</h1>
+    <p>Live and cinematic FPV drone coverage.</p>
+    <a class="btn" href="#book">Book a flight</a><a class="btn ghost" href="info.html">See the details</a>
+  </div>
+</header>
 
-  <video autoplay muted loop playsinline>
-    <source src="twoRock.mp4" type="video/mp4">
-  </video>
+<div class="specs"><div class="wrap">
+  <div><b>180 km/h</b>Top speed</div>
+  <div><b>Live</b>HD feed to any screen</div>
+  <div><b>$5M+</b>Liability cover</div>
+  <div><b>48 h</b>Footage delivered</div>
+</div></div>
 
-  <div class="brand">
-    <img src="logo_c.png" alt="Logo" width="50" height="50" style="vertical-align: middle;">
-<span>TOMATO DRONES</span>
-    
+<section id="work"><div class="wrap">
+  <h2>What we fly</h2>
+  <p class="lead">We don't just fly drones. We build them for the job.</p>
+  <p class="sub">180 km/h on the track. Under a desk indoors. Through a chimney. If a store-bought drone can't do it, we build one that can.</p>
+  <div class="grid">
+    <a class="tile big slot" href="info.html#live"><img src="media/live.jpeg" alt="FPV drone filming a live event"><span class="cap">PHOTO: media/live.jpg. The drone mid-air at a real event with the crowd or track behind it. Landscape, sharp.</span><h3>Live broadcast</h3></a>
+    <a class="tile wide slot" href="info.html#sports"><img src="media/sports.jpeg" alt="Motorsport seen from an FPV drone"><span class="cap">PHOTO: media/sports.jpg. Still frame from a sports clip: bike, car, skier or athlete, very close.</span><h3>Sports FPV</h3></a>
+    <a class="tile slot" href="info.html#indoor"><img src="media/indoor.jpeg" alt="FPV drone flying indoors"><span class="cap">PHOTO: media/indoor.jpg. Indoor arena, venue or warehouse shot.</span><h3>Indoor flight</h3></a>
+    <a class="tile slot" href="info.html#promo"><img src="media/promo2.png" alt="Promo video frame from an event"><span class="cap">PHOTO: media/promo.jpg. A frame from a finished promo video.</span><h3>Custom-built</h3></a>
   </div>
 
-  <div class="hero-content">
-    <h1>Cinematic FPV<br>Aerials</h1>
-    <p>Calgary-based drone cinematography for real estate, industrial, and commercial visuals.</p>
+</div></section>
 
-    <div class="hero-actions">
-      <a href="#portfolio" class="btn btn-primary">View Work</a>
-      <a href="#contact" class="btn btn-outline">Get a Quote</a>
-    </div>
+<section id="reel" class="dk"><div class="wrap">
+  <h2>Watch it fly</h2>
+  <div class="reel">
+    <div class="clip slot"><video autoplay muted loop playsinline preload="metadata"><source src="media/reel1.mp4" type="video/mp4"></video><span class="cap">CLIP 1: media/reel1.mp4. Vertical 9:16, 5 to 8 s. Fast flyby of a person or vehicle.</span></div>
+    <div class="clip slot"><video autoplay muted loop playsinline preload="metadata"><source src="media/reel2.mp4" type="video/mp4"></video><span class="cap">CLIP 2: media/reel2.mp4. Vertical, a dive or a drop.</span></div>
+    <div class="clip slot"><video autoplay muted loop playsinline preload="metadata"><source src="media/reel3.mp4" type="video/mp4"></video><span class="cap">CLIP 3: media/reel3.mp4. Vertical, indoor or crowd moment.</span></div>
+    <div class="clip slot"><video autoplay muted loop playsinline preload="metadata"><source src="media/reel4.mp4" type="video/mp4"></video><span class="cap">CLIP 4: media/reel4.mp4. Vertical, the live feed on a monitor or screen.</span></div>
   </div>
+</div></section>
 
-</section>
-
-<!-- SERVICES -->
-<section class="container">
-  <h2>Services</h2>
-  <div class="services">
-    <div class="card">Real Estate Flythroughs</div>
-    <div class="card">Construction Tracking</div>
-    <div class="card">Event Coverage</div>
-    <div class="card">Commercial Cinematics</div>
-  </div>
-</section>
-
-<!-- PORTFOLIO -->
-<section class="container" id="portfolio">
-  <h2>Featured Work</h2>
-  <div class="portfolio">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/nwQSkTdGqn8?si=Qu9YaFXA_uNrLhO6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/4V4vYfZzAvI?si=W__c7DfGCSNk1PB9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/sFaDt3SE3fg?si=DOO-idSJyPERDa3L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="container">
-  <h2>About</h2>
-  <p>
-    Professional FPV drone pilot delivering high-impact cinematic visuals for
-    real estate, industrial, and commercial clients.
-  </p>
-</section>
-
-<!-- STATS -->
-<section class="container stats">
+<section id="book" class="book"><div class="wrap">
   <div>
-    <h2>50+</h2>
-    <p>Projects</p>
+    <h2>Got an event?</h2>
+    <p>Tell us the date. We handle the sky.</p>
+    <p><a href="mailto:tomatodrones@gmail.com">tomatodrones@gmail.com</a></p>
   </div>
-  <div>
-    <h2>5+</h2>
-    <p>Industries</p>
+  <div class="qr slot">
+    <img src="media/qr.png" alt="QR code to contact us">
+    <span class="cap">IMAGE: media/qr.png. Square QR code, dark on white, at least 600 x 600 px.</span>
   </div>
-  <div>
-    <h2>100+</h2>
-    <p>Flight Hours</p>
-  </div>
-</section>
+</div></section>
 
-<!-- CTA -->
-<section class="container" id="contact" style="text-align:center;">
-  <h2>Ready to Shoot?</h2>
-  <p>Get a quote within 24 hours</p>
-  <a href="mailto:tomatodrones@gmail.com" class="btn btn-primary">Contact Me</a>
-</section>
-
-<footer>
-  © 2026 Tomato Drones
-</footer>
-
+<footer><div class="wrap">
+  <span>&copy; 2026 Tomato Drones</span>
+  <span><a href="info.html">Info</a> &nbsp; <a href="https://www.instagram.com/tomato_drones/">Instagram</a> &nbsp; <a href="https://www.youtube.com/@TomatoDrones">YouTube</a></span>
+</div></footer>
+<script src="script.js"></script>
 </body>
 </html>
